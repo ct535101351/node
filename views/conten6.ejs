@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="UTF-8"/>
+    <title>"boke"</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/icon/iconfont.css"/>
+    <script src="/stylesheets/jquery-2.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+		<%- include('qublic.ejs') %>
+		<div class="Xqy">
+			<%- include('svg1.ejs')%>
+			<div class="xqy">
+					<div>
+		    		<div class="xqy1"><%- result[5]['title']%></div>
+		    		<div class="xqy2"><%- result[5]['time']%></div>
+		    		<img src="<%- result[5]['img']%>" class="xqy3"/>
+		    		<div class="xqy4"><%- result[5]['p1']%></div>
+		    		<div class="xqy5"><%- result[5]['p2']%></div>
+	    	</div>
+			</div>
+			<%- include('svg2.ejs')%>
+		</div>
+			<div class="Ly">
+			<div class="ly" style="margin-top: 100px;">
+				<h3>留言板:</h3>
+				<ul>
+					<%  result1.forEach(function(item,index){  %>
+					<li>
+						<p>用户名:<%- item.user%></p>
+						<p>邮箱:<%- item.email%></p>
+						<p>发布时间:<%- item.time%></p>
+						<p>发布内容:<%- item.con%></p>
+					</li>
+					<% }) %>
+				</ul>
+			</div>
+		</div>
+		<div class="Fb">
+			<div class="fb" style="margin-top: 100px;">
+				<form action="/users/list5" method="post" class="fb-1">
+					<p>用户名:</p>
+					<input type="text"  name="user" class="in1"/>
+					<p>邮箱:</p>
+					<input type="email"  name="email" class="in1"/>
+					<p>评论内容:</p>
+					<input type="text"  name="con" class="in2"/>
+					<input type="submit"  value="提交" class="in3"/>					
+				</form>
+				
+			</div>			
+</div>
+  </body>
+ 
+</html>

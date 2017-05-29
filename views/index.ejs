@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="UTF-8"/>
+    <title>"boke"</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/icon/iconfont.css"/>
+    <script src="/stylesheets/jquery-2.0.0.min.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+    	<%- include('qublic.ejs')%>
+    	<!------------------------列表----------------------------------->
+    	<div class="list-w"> 
+    		<div class="list" id="list">   				
+						<%- include('svg1.ejs') %>
+	    	<%  result.forEach(function(item,index){  %>
+	    		<div class="list_detail" >
+		    		<div class="list_detail_top">
+			    		<img src="<%- item.img%>"/>
+			    		<i class="iconfont icon-wailianhuodong"></i>
+			    		<span></span>
+						</div>
+						<div class="Cont">
+					 		<div class="cont"> 
+					 			<p><%- item.title%></p>
+					 			<p><%- item.time%></p>
+					 			<p><%- item.p1%></p>
+					 		</div>
+					 	</div>
+					 	<div class="list_detail_btn">
+    					 	<p>Continue reading …</p>
+    				</div>
+    			</div>		    	
+	    	<% })  %>	    	 			
+    				<%- include('svg2.ejs') %>
+    		</div>
+    		<div class="list" id="list1">   				
+						<%- include('svg1.ejs') %>
+	    	<%  result.forEach(function(item,index){  %>
+	    		<div class="list_detail" >
+		    		<div class="list_detail_top">
+			    		<img src="<%- item.img%>"/>
+			    		<i class="iconfont icon-wailianhuodong"></i>
+			    		<span></span>
+						</div>
+						<div class="Cont">
+					 		<div class="cont"> 
+					 			<p><%- item.title%></p>
+					 			<p><%- item.time%></p>
+					 			<p><%- item.p1%></p>
+					 		</div>
+					 	</div>
+					 	<div class="list_detail_btn">
+    					 	<p>Continue reading …</p>
+    				</div>
+    			</div>		    	
+	    	<% })  %>	    	 			
+    				<%- include('svg2.ejs') %>
+    		</div>
+    	</div>
+    	<div class="bott" onclick="location.href='conten2'">
+    		<%- include('svg2.ejs') %>
+    		<div class="bott1">
+    			<p>Proudly powered by WordPress | Theme: Oblique by Themeisle.</p>
+    		</div>
+    	</div>
+  </body>
+
+	<script type="text/javascript">
+		$("#list>div:gt(2)").css('display','none')
+		$("#list1>div:lt(3)").css('display','none')
+		$("#list>div").eq(1).css('margin-top','-30px')
+		$("#list>div").eq(2).css('margin-top','-60px')
+		$("#list1>div").eq(4).css('margin-top','-30px')
+		$("#list1>div").eq(5).css('margin-top','-60px')
+		
+		$("#list>div").each(function(i){
+			$(this).on("click",function(){
+				   location.href='conten'+(i+1)
+					
+			})
+		})
+		$("#list1>div").each(function(i){
+			$(this).on("click",function(){
+				   location.href='conten'+(i+1)				
+			})
+		})
+
+			
+
+	</script>
+  
+ 
+</html>

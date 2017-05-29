@@ -1,0 +1,23 @@
+<div class="top">
+	 <%  if(!user){ %>
+			<span style="color: #fff;margin-right:.9rem ;margin-left:.9rem;" onclick="location.href='login'">登录</span>
+			<span style="color: #fff;" onclick="location.href='regi'">注册</span>
+			<% }else{ %>
+			<span style="color: #fff;margin-right: .9rem;">欢迎：<%- user%> 会员</span>
+			<span style="color: #fff;" onclick="location.href='relogin'">退出</span>
+			<% } %>
+			
+    		<div class="top_r">
+    			<a href="http://facebook.com/"><i class="iconfont icon-facebook "></i></a>
+    			<a href="http://twitter.com/"><i class="iconfont icon-twitter "></i></a>
+    			<a href="https://www.linkedin.com/"><i class="iconfont icon-linkedin "></i></a>
+    			<a href="http://instagram.com/"><i class="iconfont icon-instagram "></i></a>
+    			<a href="http://pinterest.com/"><i class="iconfont icon-pinterest "></i></a>
+    			<input type="text" placeholder="Search.." />   			
+    		</div>
+</div>
+<div class="banner">
+	<img src="https://demot-vertigostudio.netdna-ssl.com/oblique/wp-content/uploads/sites/61/2015/11/Logo.png"/>
+	<%- include('svg1.ejs') %>
+		<%- include('svg2.ejs') %>
+</div>
